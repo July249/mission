@@ -8,3 +8,5 @@ const password = 'babo';
 // 리턴값: [hashed password, salt]
 encryptPassword(password);
 ```
+
+-> hint: pbkdf2 (https://nodejs.org/docs/latest-v18.x/api/crypto.html#cryptopbkdf2password-salt-iterations-keylen-digest-callback)
