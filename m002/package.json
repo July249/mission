@@ -1,0 +1,20 @@
+{
+  "name": "m002",
+  "version": "1.0.0",
+  "module": "commonjs",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
+  
