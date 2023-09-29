@@ -1,7 +1,16 @@
 import * as crypto from 'crypto';
 
-export const encrypt = (value: string): string => {
-    const hashedValue = crypto.createHmac('sha256', 'secret').update(value).digest('base64').replace('=', '');
+const salt = 'mungchungee';
+const hashedSalt = Buffer.from(salt).toString('base64').replace('=', '');
 
-    return hashedValue;
+export const encrypt = (password: string) => {
+  const hashedPassword = crypto
+    .pbkdf2Sync(password, hashedSalt, 9876, 64, 'sha256')
+    .toString('base64')
+    .replace('=', '');
+
+  return {
+    hashedPassword,
+    hashedSalt,
+  };
 };
